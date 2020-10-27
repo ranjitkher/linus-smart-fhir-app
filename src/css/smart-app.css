@@ -5,7 +5,7 @@ th, td {
 
 body {
   margin: 10px;
-  color: #3b3a39;
+  color: blue;/*#3b3a39;*/
   font-size: 15px;
   font-family: Verdana;
   background-image:url('../images/LinusLogo.JPG');
