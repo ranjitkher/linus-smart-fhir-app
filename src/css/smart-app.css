@@ -60,13 +60,14 @@ holder {
 /* The navigation bar */
 .navbar {
   overflow: hidden;
-  width: 100px;
+  width: 900px;
   background-color: #3d85c6ff;
 }
 
 .navbar a {
   float: left;
   color: black;
+  width: 150px;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
