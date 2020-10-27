@@ -15,6 +15,9 @@ body {
 
 holder {
   display: none;
+  color: red;
+  font-size: 15px;
+  font-family: Verdana;
 }
 
 .spinner {
