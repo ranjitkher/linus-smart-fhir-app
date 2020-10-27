@@ -63,9 +63,8 @@ holder {
 /* The navigation bar */
 .navbar {
   overflow: hidden;
-  width: 1200px;/*972px;*/
+  width: 972px;
   background-color: #3d85c6ff;
-  left: 2000px;
 }
 
 .navbar a {
