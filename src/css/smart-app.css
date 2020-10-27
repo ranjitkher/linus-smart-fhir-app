@@ -60,7 +60,7 @@ holder {
 /* The navigation bar */
 .navbar {
   overflow: hidden;
-  width: 972px;
+  width: 810px;
   background-color: #3d85c6ff;
 }
 
@@ -76,12 +76,12 @@ holder {
 }
 
 .navbar a:hover {
-  background-color: #4CAF50; /*#ddd;*/
+  background-color: #4CAF50;
   color: white;
 }
 
 .navbar a.active {
-  background-color: #4CAF50; /*#3d85c6ff;*/
+  background-color: #4CAF50;
   color: white;
 }
 
