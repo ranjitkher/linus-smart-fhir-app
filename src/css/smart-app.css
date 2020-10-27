@@ -60,7 +60,7 @@ holder {
 /* The navigation bar */
 .navbar {
   overflow: hidden;
-  width: 100%;
+  width: 50%;
   background-color: #3d85c6ff;
 }
 
