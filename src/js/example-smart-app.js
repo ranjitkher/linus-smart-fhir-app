@@ -72,9 +72,6 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-
-          window.alert("sometext" + diabetes.clinicalStatus);
-          window.alert("sometext" + diabetes[0].clinicalStatus);
           
           alert("Callig getClinicalStatus: " + getClinicalStatus(diabetes[0]))
           /*p.diabetes = diabetes.clinicalStatus;*/ /*getQuantityValueAndUnit(height[0]);*/
