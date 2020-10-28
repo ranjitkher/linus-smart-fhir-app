@@ -5,7 +5,45 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <title>Linus Smart FHIR EMR App</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta http-equiv="refresh" content="0; URL=https://www.linus.health/" /> -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Linus Smart FHIR EMR App</title>
 
+    <link rel='stylesheet' type='text/css' href='./src/css/smart-app.css'>
+    <!--
+      Temporarily disable cerner-smart-embeddable-lib
+      <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
+    -->
+
+  </head>
+  <body>
+  <img src="./src/images/LinusLogo.JPG" alt="Linus Logo">
+  <!-- TBD Start Menu Bar -->
+  <div class="navbar">
+    <a href="./index.html">Patient Info</a>
+    <a href="./recentresult.html">Results</a>
+    <a class="active" href="./ordertest.html">Order Test</a>
+    <a href="./patiented.html">Patient Ed</a>
+    <a href="./literature.html">Literature</a>
+  </div>    
+  <!-- TBD Menu Bar -->
+    
+  <br><br><br>
+  <p style="font-family:verdana;color:#3b3a39;font-size:18px">Description:</p>
+  <br>
+  <p style="font-family:verdana;color:#3b3a39;font-size:18px">Example Features:</p>
+  <ul>
+    <li> Select type of test: Mini-Modal 3, Mini-Modal 5, Linus In-Clinic Battery, Linus Remote Battery. Allow multi-selection as provider might want to order multiple tests at once
+    <li> If Linus Remote Battery, then prompt for patients email address (unless it is a part of the EMR's patient record)
+    <li> Note: Test details (including patient & provider) should be pushed to Linus server so that it can then push appropriate tests to in-clinic tablet or patient smartphone
+  </ul>
+  <!-- TBD Menu Bar -->
+  </body>
+</html>
     <link rel='stylesheet' type='text/css' href='./src/css/smart-app.css'>
     <!--
       Temporarily disable cerner-smart-embeddable-lib
