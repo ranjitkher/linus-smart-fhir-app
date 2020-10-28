@@ -87,7 +87,7 @@
           else if (typeof diabetes[0] == 'undefined')
             alert("diabetes[0] is undefined");
           else if (typeof diabetes[0].clinicalStatus == 'undefined')
-            alert("diabetes[0].clinicalStatus is undefined")
+            alert("diabetes[0].clinicalStatus is undefined");
 
           /*alert("Callig getClinicalStatus: " + getClinicalStatus(diabetes[0]))*/
           /*p.diabetes = diabetes.clinicalStatus;*/ /*getQuantityValueAndUnit(height[0]);*/
