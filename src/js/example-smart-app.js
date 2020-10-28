@@ -21,6 +21,9 @@
                       }
                     }
         });
+        
+        alert("hello1")
+        
         /* TBD: Pull specific conditions */
         var cond = smart.patient.api.fetchAll({
           type: 'Condition',
@@ -31,7 +34,7 @@
           }
         });        
        
-        alert("hello")
+        alert("hello2")
         alert(obv.length)
         alert(cond.length)
         
