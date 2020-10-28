@@ -54,7 +54,7 @@
           var ldl = byCodes('2089-1');
 
           /* TBD Check for conditions */
-          var diabetes = 0/*conditionsByCodes('26929004');*/
+          var diabetes = byCodes('8302-2');/*conditionsByCodes('26929004');*/
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -74,7 +74,7 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          p.diabetes = 'testing'/*diabetes[0].clinicalStatus;*/
+          p.diabetes = getQuantityValueAndUnit(height[0]); /*diabetes[0].clinicalStatus;*/
           ret.resolve(p);
         });
       } else {
