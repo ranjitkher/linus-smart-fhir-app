@@ -29,10 +29,8 @@
               $or: ['http://snomed.info/sct|26929004']
             }
           }
-        });
-        
-        window.alert("sometext" + cond);
-        
+        });        
+       
         $.when(pt, obv, cond).fail(onError);
 
         $.when(pt, obv, cond).done(function(patient, obv, cond) {
@@ -75,6 +73,9 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
+          window.alert("sometext" + diabetes.clinicalStatus);
+          window.alert("sometext" + diabetes[0].clinicalStatus);
+          
           p.diabetes = diabetes.clinicalStatus; /*getQuantityValueAndUnit(height[0]);*/
           ret.resolve(p);
         });
