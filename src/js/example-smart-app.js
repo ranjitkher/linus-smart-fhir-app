@@ -31,6 +31,7 @@
           }
         });        
        
+        alert("hello")
         alert(obv.length)
         alert(cond.length)
         
