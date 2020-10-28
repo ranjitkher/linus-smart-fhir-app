@@ -63,8 +63,9 @@
           else if (typeof diabetes[0].clinicalStatus == 'undefined')
             alert("diabetes[0].clinicalStatus is undefined");
           
-          alert("hello1.2");
-          alert(String(diabetes.clinicalStatus));
+          alert("hello1.4");
+          alert(String(diabetes));
+          alert("hello1.5");
           
 
           var p = defaultPatient();
