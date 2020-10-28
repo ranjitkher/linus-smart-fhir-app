@@ -20,11 +20,21 @@
                               'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
                       }
                     }
-                  });
+        });
+        /* TBD: Pull specific conditions */
+        var cond = smart.patient.api.fetchAll({
+          type: 'Condition',
+          query: {
+            code: {
+              $or: ['http://snomed.info/sct|356744012']
+            }
+          }
+        });
+        
 
-        $.when(pt, obv).fail(onError);
+        $.when(pt, obv, cond).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, cond).done(function(patient, obv, cond) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
