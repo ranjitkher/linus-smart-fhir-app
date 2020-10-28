@@ -27,7 +27,7 @@
           type: 'Condition',
           query: {
             code: {
-              $or: ['http://snomed.info/sct|26929004']
+              $or: ['26929004'] /*$or: ['http://snomed.info/sct|26929004']*/
             }
           }
         });  
