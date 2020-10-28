@@ -31,7 +31,8 @@
           }
         });
         
-
+        window.alert("sometext");
+        
         $.when(pt, obv, cond).fail(onError);
 
         $.when(pt, obv, cond).done(function(patient, obv, cond) {
