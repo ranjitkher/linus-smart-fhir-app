@@ -76,7 +76,8 @@
           window.alert("sometext" + diabetes.clinicalStatus);
           window.alert("sometext" + diabetes[0].clinicalStatus);
           
-          p.diabetes = diabetes.clinicalStatus; /*getQuantityValueAndUnit(height[0]);*/
+          alert("Callig getClinicalStatus: " + getClinicalStatus(diabetes[0]))
+          /*p.diabetes = diabetes.clinicalStatus;*/ /*getQuantityValueAndUnit(height[0]);*/
           ret.resolve(p);
         });
       } else {
@@ -132,6 +133,15 @@
     }
   }
 
+  function getClinicalStatus(ob) {
+    if (typeof ob != 'undefined' &&
+        typeof ob.clinicalStatus != 'undefined') {
+          return ob.clinicalStatus;
+    } else {
+      return undefined;
+    }
+  }
+  
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
