@@ -73,9 +73,11 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
           
-          if (typeof diabetes[0] == undefined)
+          if (typeof diabetes == undefined)
+            alert("diabetes is undefined")
+          else if (typeof diabetes[0] == undefined)
             alert("diabetes[0] is undefined");
-          if (typeof diabetes[0] != undefined && typeof diabetes[0].clinicalStatus == undefined)
+          else if (typeof diabetes[0].clinicalStatus == undefined)
             alert("diabetes[0].clinicalStatus is undefined)
 
           /*alert("Callig getClinicalStatus: " + getClinicalStatus(diabetes[0]))*/
