@@ -73,7 +73,12 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
           
-          alert("Callig getClinicalStatus: " + getClinicalStatus(diabetes[0]))
+          if (typeof diabetes[0] == undefined)
+            alert("diabetes[0] is undefined");
+          if (typeof diabetes[0] != undefined && typeof diabetes[0].clinicalStatus == undefined)
+            alert("diabetes[0].clinicalStatus is undefined)
+
+          /*alert("Callig getClinicalStatus: " + getClinicalStatus(diabetes[0]))*/
           /*p.diabetes = diabetes.clinicalStatus;*/ /*getQuantityValueAndUnit(height[0]);*/
           ret.resolve(p);
         });
@@ -130,7 +135,7 @@
     }
   }
 
-  function getClinicalStatus(ob) {
+  function getClinicalStatus(ob) {   
     if (typeof ob != 'undefined' &&
         typeof ob.clinicalStatus != 'undefined') {
           return ob.clinicalStatus;
