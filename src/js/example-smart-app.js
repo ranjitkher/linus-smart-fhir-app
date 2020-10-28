@@ -54,7 +54,7 @@
           var ldl = byCodes('2089-1');
 
           /* TBD Check for conditions */
-          var diabetes = byCodes('8302-2');/*conditionsByCodes('26929004');*/
+          var diabetes = conditionsByCodes('26929004');/*byCodes('8302-2');*/
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
