@@ -31,7 +31,7 @@
           }
         });
         
-        window.alert("sometext");
+        window.alert("sometext" + cond);
         
         $.when(pt, obv, cond).fail(onError);
 
