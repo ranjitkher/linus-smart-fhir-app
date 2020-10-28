@@ -8,7 +8,7 @@
     }
 
     function onReady(smart)  {
-      alert("1");
+      windows.alert("1");
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -23,7 +23,7 @@
                     }
         });
         
-        
+        windows.alert("2");
         /* TBD: Pull specific conditions */
         var cond = smart.patient.api.fetchAll({
           type: 'Condition',
@@ -34,7 +34,7 @@
           }
         });        
        
-        
+        windows.alert("3");
         $.when(pt, obv, cond).fail(onError);
 
         $.when(pt, obv, cond).done(function(patient, obv, cond) {
@@ -82,12 +82,12 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
           
-          if (typeof diabetes == undefined)
+          if (typeof diabetes == 'undefined')
             alert("diabetes is undefined")
-          else if (typeof diabetes[0] == undefined)
+          else if (typeof diabetes[0] == 'undefined')
             alert("diabetes[0] is undefined");
-          else if (typeof diabetes[0].clinicalStatus == undefined)
-            alert("diabetes[0].clinicalStatus is undefined)
+          else if (typeof diabetes[0].clinicalStatus == 'undefined')
+            alert("diabetes[0].clinicalStatus is undefined")
 
           /*alert("Callig getClinicalStatus: " + getClinicalStatus(diabetes[0]))*/
           /*p.diabetes = diabetes.clinicalStatus;*/ /*getQuantityValueAndUnit(height[0]);*/
