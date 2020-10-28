@@ -64,7 +64,7 @@
             alert("diabetes[0].clinicalStatus is undefined");
           
           alert("hello1.2");
-          alert(diabetes.clinicalStatus);
+          alert(String(diabetes.clinicalStatus));
           
 
           var p = defaultPatient();
