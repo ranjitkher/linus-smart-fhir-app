@@ -74,7 +74,7 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          p.diabetes = getQuantityValueAndUnit(height[0]); /*diabetes[0].clinicalStatus;*/
+          p.diabetes = diabetes.clinicalStatus; /*getQuantityValueAndUnit(height[0]);*/
           ret.resolve(p);
         });
       } else {
