@@ -31,11 +31,18 @@
           }
         });        
        
+        alert(obv.length)
+        alert(cond.length)
+        
         $.when(pt, obv, cond).fail(onError);
 
         $.when(pt, obv, cond).done(function(patient, obv, cond) {
           var byCodes = smart.byCodes(obv, 'code');
           var conditionsByCodes = smart.byCodes(cond, 'code');
+          
+          alert(byCodes.length)
+          alert(conditionsbyCodes.length)
+          
           var gender = patient.gender;
 
           var fname = '';
