@@ -36,6 +36,7 @@
 
         $.when(pt, obv, cond).done(function(patient, obv, cond) {
           var byCodes = smart.byCodes(obv, 'code');
+          var conditionsByCodes = smart.byCodes(cond, 'code');
           var gender = patient.gender;
 
           var fname = '';
@@ -53,8 +54,7 @@
           var ldl = byCodes('2089-1');
 
           /* TBD Check for conditions */
-          byCodes = smart.byCodes(cond, 'code');
-          var diabetes = byCodes('356744012');
+          var diabetes = conditionsByCodes('356744012');
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -74,7 +74,7 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          p.diabetes = diabetes.clinicalStatus;
+          p.diabetes = diabetes[0].clinicalStatus;
           ret.resolve(p);
         });
       } else {
