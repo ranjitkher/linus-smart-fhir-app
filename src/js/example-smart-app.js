@@ -26,7 +26,7 @@
           type: 'Condition',
           query: {
             code: {
-              $or: ['http://snomed.info/sct|356744012']
+              $or: ['http://snomed.info/sct|26929004']
             }
           }
         });
@@ -74,7 +74,7 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          p.diabetes = diabetes[0].clinicalStatus;
+          p.diabetes = 'testing'/*diabetes[0].clinicalStatus;*/
           ret.resolve(p);
         });
       } else {
