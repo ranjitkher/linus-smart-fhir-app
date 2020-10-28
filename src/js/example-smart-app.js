@@ -31,11 +31,10 @@
             }
           }
         });  
-        alert("hello1");
         
-        $.when(pt, obv).fail(onError);
+        $.when(pt, obv, cond).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, cond).done(function(patient, obv, cond) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -52,6 +51,8 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+
+          alert("hello1.1");
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
