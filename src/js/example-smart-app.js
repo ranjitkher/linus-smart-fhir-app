@@ -36,6 +36,7 @@
 
         $.when(pt, obv, cond).done(function(patient, obv, cond) {
           var byCodes = smart.byCodes(obv, 'code');
+          var conditionsByCodes = smart.byCodes(cond, 'code');
           var gender = patient.gender;
 
           var fname = '';
@@ -51,8 +52,17 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          var diabetes = conditionsByCodes('26929004');/*byCodes('8302-2');*/
 
           alert("hello1.1");
+          
+          if (typeof diabetes == 'undefined')
+            alert("diabetes is undefined");
+          else if (typeof diabetes[0] == 'undefined')
+            alert("diabetes[0] is undefined");
+          else if (typeof diabetes[0].clinicalStatus == 'undefined')
+            alert("diabetes[0].clinicalStatus is undefined");
+          
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
