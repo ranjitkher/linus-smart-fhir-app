@@ -8,6 +8,7 @@
     }
 
     function onReady(smart)  {
+      alert("1");
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -54,13 +55,13 @@
           var ldl = byCodes('2089-1');
 
           /* TBD Check for conditions */
-          alert("hello1")
+          alert("hello1");
           var conditionsByCodes = smart.byCodes(cond, 'code');
-          alert("hello2")
-          alert(obv.length)
-          alert(cond.length)
-          alert(byCodes.length)
-          alert(conditionsbyCodes.length)
+          alert("hello2");
+          alert(obv.length);
+          alert(cond.length);
+          alert(byCodes.length);
+          alert(conditionsbyCodes.length);
           var diabetes = conditionsByCodes('26929004');/*byCodes('8302-2');*/
 
           var p = defaultPatient();
