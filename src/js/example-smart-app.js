@@ -45,12 +45,16 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
-
+                    
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+
+          /* TBD Check for conditions */
+          byCodes = smart.byCodes(cond, 'code');
+          var diabetes = byCodes('356744012');
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
