@@ -63,6 +63,9 @@
           else if (typeof diabetes[0].clinicalStatus == 'undefined')
             alert("diabetes[0].clinicalStatus is undefined");
           
+          alert("hello1.2");
+          alert(diabetes.clinicalStatus);
+          
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
