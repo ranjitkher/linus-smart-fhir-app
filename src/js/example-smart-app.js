@@ -8,7 +8,6 @@
     }
 
     function onReady(smart)  {
-      windows.alert("1");
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -21,25 +20,14 @@
                               'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
                       }
                     }
-        });
-        
-        windows.alert("2");
-        /* TBD: Pull specific conditions */
-        var cond = smart.patient.api.fetchAll({
-          type: 'Condition',
-          query: {
-            code: {
-              $or: ['http://snomed.info/sct|26929004']
-            }
-          }
-        });        
-       
-        windows.alert("3");
-        $.when(pt, obv, cond).fail(onError);
+                  });
 
-        $.when(pt, obv, cond).done(function(patient, obv, cond) {
+        $.when(pt, obv).fail(onError);
+
+        $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
+
           var fname = '';
           var lname = '';
 
@@ -47,22 +35,12 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
-                    
+
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
-
-          /* TBD Check for conditions */
-          alert("hello1");
-          var conditionsByCodes = smart.byCodes(cond, 'code');
-          alert("hello2");
-          alert(obv.length);
-          alert(cond.length);
-          alert(byCodes.length);
-          alert(conditionsbyCodes.length);
-          var diabetes = conditionsByCodes('26929004');/*byCodes('8302-2');*/
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -81,16 +59,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-          
-          if (typeof diabetes == 'undefined')
-            alert("diabetes is undefined")
-          else if (typeof diabetes[0] == 'undefined')
-            alert("diabetes[0] is undefined");
-          else if (typeof diabetes[0].clinicalStatus == 'undefined')
-            alert("diabetes[0].clinicalStatus is undefined");
 
-          /*alert("Callig getClinicalStatus: " + getClinicalStatus(diabetes[0]))*/
-          /*p.diabetes = diabetes.clinicalStatus;*/ /*getQuantityValueAndUnit(height[0]);*/
           ret.resolve(p);
         });
       } else {
@@ -114,7 +83,6 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      diabetes: {value: ''},
     };
   }
 
@@ -146,15 +114,6 @@
     }
   }
 
-  function getClinicalStatus(ob) {   
-    if (typeof ob != 'undefined' &&
-        typeof ob.clinicalStatus != 'undefined') {
-          return ob.clinicalStatus;
-    } else {
-      return undefined;
-    }
-  }
-  
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
@@ -167,7 +126,6 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#diabetes').html(p.diabetes);
   };
 
 })(window);
