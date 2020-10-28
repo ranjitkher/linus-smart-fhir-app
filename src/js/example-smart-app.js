@@ -20,8 +20,19 @@
                               'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
                       }
                     }
-                  });
+        });
 
+        /* TBD: Pull specific conditions */
+        var cond = smart.patient.api.fetchAll({
+          type: 'Condition',
+          query: {
+            code: {
+              $or: ['http://snomed.info/sct|26929004']
+            }
+          }
+        });  
+        alert("hello1");
+        
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
