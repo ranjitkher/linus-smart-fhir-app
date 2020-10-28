@@ -22,7 +22,6 @@
                     }
         });
         
-        alert("hello1")
         
         /* TBD: Pull specific conditions */
         var cond = smart.patient.api.fetchAll({
@@ -34,21 +33,12 @@
           }
         });        
        
-        alert("hello2")
-        alert(obv.length)
-        alert(cond.length)
         
         $.when(pt, obv, cond).fail(onError);
 
         $.when(pt, obv, cond).done(function(patient, obv, cond) {
           var byCodes = smart.byCodes(obv, 'code');
-          var conditionsByCodes = smart.byCodes(cond, 'code');
-          
-          alert(byCodes.length)
-          alert(conditionsbyCodes.length)
-          
           var gender = patient.gender;
-
           var fname = '';
           var lname = '';
 
@@ -64,6 +54,13 @@
           var ldl = byCodes('2089-1');
 
           /* TBD Check for conditions */
+          alert("hello1")
+          var conditionsByCodes = smart.byCodes(cond, 'code');
+          alert("hello2")
+          alert(obv.length)
+          alert(cond.length)
+          alert(byCodes.length)
+          alert(conditionsbyCodes.length)
           var diabetes = conditionsByCodes('26929004');/*byCodes('8302-2');*/
 
           var p = defaultPatient();
