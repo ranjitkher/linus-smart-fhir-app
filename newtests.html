@@ -24,17 +24,16 @@
     <a href="./patiented.html">Patient Ed</a>
     <a href="./literature.html">Literature</a>
   </div>
-  <!-- TBD Menu Bar -->
+  <!-- TBD Menu Bar -->    
     
   <br><br><br>
-  <p style="font-family:verdana;color:#3b3a39;font-size:18px">Description:</p>
+  <p style="font-family:verdana;color:#3b3a39;font-size:18px">Goal: Give providers an easy way to order Linus in-clinic tests or remote patient monitoring. Once the order is entered, the Linus server can send the test details (provider and patient) to the provider’s tablet or the patients smartphone as appropriate</p>
   <br>
   <p style="font-family:verdana;color:#3b3a39;font-size:18px">Example Features:</p>
   <ul>
-    <li> Select type of test: Mini-Modal 3, Mini-Modal 5, Linus In-Clinic Battery, Linus Remote Battery. Allow multi-selection as provider might want to order multiple tests at once
-    <li> If Linus Remote Battery, then prompt for patients email address (unless it is a part of the EMR's patient record)
-    <li> Note: Test details (including patient & provider) should be pushed to Linus server so that it can then push appropriate tests to in-clinic tablet or patient smartphone
-  </ul>
+    <li> Ability to select one or more tests e.g. Mini-Modal 3, Mini-Modal 5, Linus In-Clinic Battery and Linus Remote Monitoring
+    <li><i>Note: If Provider selects Remote Monitoring, prompt for patient email address (unless it is available in the FHIR patient object)</i>
+    </ul>
   <!-- TBD Menu Bar -->
   </body>
 </html>
